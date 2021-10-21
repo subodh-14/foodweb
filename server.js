@@ -19,18 +19,12 @@ db.once("open",()=>{
 app.use(bodyParser.json());
 app.use(cors({origin:"http://localhost:3000"}))
 
-app.get('/',async (req,res)=>{
+app.get('/dish',async (req,res)=>{
     const dishes = await Dish.find({});
     res.send(dishes);
    
 })
 
-app.post('/',async (req,res)=>{
-    const {name,price} = req.body;
-    const newDish =  new Dish({name,price});
-    await newDish.save();
-    res.send(newDish);
-})
 
 if(process.env.NODE_ENV =="production"){
     app.use(express.static("client/build"));

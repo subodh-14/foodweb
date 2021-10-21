@@ -9,7 +9,7 @@ function App() {
   const [dishes, setDishes] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:3030/")
+    fetch("http://localhost:3030/dish")
       .then(response => {
         if (response.ok) {
           return response.json();
