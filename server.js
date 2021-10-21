@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const Dish = require("./modals/userSchema");
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/food-web',{
+mongoose.connect('mongodb+srv://subodh:Sub@123@cluster0.fclox.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
